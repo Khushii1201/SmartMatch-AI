@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Junior Python / ML Developer (Sample)",
+    "description": "We are looking for a junior developer with strong Python fundamentals and exposure to machine learning. The candidate should be comfortable with pandas and numpy for data manipulation, have working knowledge of scikit-learn for building models, and understand SQL for querying relational databases. Familiarity with Git for version control and basic Linux command-line usage is expected. Experience with Streamlit or Flask for building demo applications is a plus.",
+    "requirements": [
+      {"skill_name": "Python", "importance": 9, "mandatory": true},
+      {"skill_name": "Machine Learning", "importance": 8, "mandatory": true},
+      {"skill_name": "Pandas", "importance": 7, "mandatory": true},
+      {"skill_name": "NumPy", "importance": 6, "mandatory": false},
+      {"skill_name": "scikit-learn", "importance": 7, "mandatory": true},
+      {"skill_name": "SQL", "importance": 6, "mandatory": true},
+      {"skill_name": "Git", "importance": 5, "mandatory": false},
+      {"skill_name": "Linux", "importance": 4, "mandatory": false},
+      {"skill_name": "Flask", "importance": 3, "mandatory": false}
+    ]
+  },
+  {
+    "title": "Frontend React Developer (Sample)",
+    "description": "Looking for a frontend developer skilled in React and modern JavaScript/TypeScript. Must have solid HTML and CSS skills and understanding of REST APIs for backend integration. Git and basic CI/CD familiarity preferred.",
+    "requirements": [
+      {"skill_name": "React", "importance": 9, "mandatory": true},
+      {"skill_name": "JavaScript", "importance": 9, "mandatory": true},
+      {"skill_name": "TypeScript", "importance": 6, "mandatory": false},
+      {"skill_name": "HTML", "importance": 7, "mandatory": true},
+      {"skill_name": "CSS", "importance": 7, "mandatory": true},
+      {"skill_name": "REST APIs", "importance": 6, "mandatory": true},
+      {"skill_name": "Git", "importance": 5, "mandatory": false},
+      {"skill_name": "CI/CD", "importance": 3, "mandatory": false}
+    ]
+  },
+  {
+    "title": "Data Analyst (Sample)",
+    "description": "Seeking a data analyst proficient in SQL and Excel, with strong data visualization skills using Tableau or Power BI. Python and pandas experience for scripting analyses is a strong plus. Statistics background required.",
+    "requirements": [
+      {"skill_name": "SQL", "importance": 9, "mandatory": true},
+      {"skill_name": "Excel", "importance": 7, "mandatory": true},
+      {"skill_name": "Statistics", "importance": 7, "mandatory": true},
+      {"skill_name": "Data Visualization", "importance": 6, "mandatory": false},
+      {"skill_name": "Tableau", "importance": 5, "mandatory": false},
+      {"skill_name": "Python", "importance": 5, "mandatory": false},
+      {"skill_name": "Pandas", "importance": 4, "mandatory": false}
+    ]
+  }
+]

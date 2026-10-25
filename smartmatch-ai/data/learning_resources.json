@@ -1,0 +1,43 @@
+{
+  "Python": [
+    {"title": "Python for Everybody (freeCodeCamp)", "type": "course", "url": "https://www.freecodecamp.org/learn/scientific-computing-with-python/"},
+    {"title": "Official Python Tutorial", "type": "documentation", "url": "https://docs.python.org/3/tutorial/"}
+  ],
+  "Machine Learning": [
+    {"title": "Machine Learning Crash Course (Google)", "type": "course", "url": "https://developers.google.com/machine-learning/crash-course"},
+    {"title": "scikit-learn User Guide", "type": "documentation", "url": "https://scikit-learn.org/stable/user_guide.html"}
+  ],
+  "Fuzzy Logic": [
+    {"title": "scikit-fuzzy Documentation", "type": "documentation", "url": "https://pythonhosted.org/scikit-fuzzy/"},
+    {"title": "Introduction to Fuzzy Logic (NPTEL)", "type": "course", "url": "https://nptel.ac.in/"}
+  ],
+  "SQL": [
+    {"title": "SQL Tutorial (Mode Analytics)", "type": "tutorial", "url": "https://mode.com/sql-tutorial/"},
+    {"title": "SQLBolt Interactive Lessons", "type": "interactive", "url": "https://sqlbolt.com/"}
+  ],
+  "React": [
+    {"title": "Official React Documentation", "type": "documentation", "url": "https://react.dev/learn"}
+  ],
+  "Docker": [
+    {"title": "Docker Get Started Guide", "type": "documentation", "url": "https://docs.docker.com/get-started/"}
+  ],
+  "AWS": [
+    {"title": "AWS Cloud Practitioner Essentials", "type": "course", "url": "https://aws.amazon.com/training/"}
+  ],
+  "Data Structures": [
+    {"title": "Data Structures and Algorithms (GeeksforGeeks)", "type": "tutorial", "url": "https://www.geeksforgeeks.org/data-structures/"}
+  ],
+  "Algorithms": [
+    {"title": "Algorithms Specialization (Coursera, free audit)", "type": "course", "url": "https://www.coursera.org/specializations/algorithms"}
+  ],
+  "Git": [
+    {"title": "Pro Git Book (free)", "type": "book", "url": "https://git-scm.com/book/en/v2"}
+  ],
+  "Natural Language Processing": [
+    {"title": "NLP Specialization notes (Stanford CS224N)", "type": "course", "url": "https://web.stanford.edu/class/cs224n/"}
+  ],
+  "_default": [
+    {"title": "freeCodeCamp", "type": "course", "url": "https://www.freecodecamp.org/"},
+    {"title": "GeeksforGeeks", "type": "tutorial", "url": "https://www.geeksforgeeks.org/"}
+  ]
+}

@@ -1,0 +1,3 @@
+"""
+SmartMatch AI Backend package.
+"""
