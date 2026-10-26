@@ -13,7 +13,7 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { PageId } from '../types';
+import type { PageId } from '../types';
 
 interface NavItem {
   id: PageId;

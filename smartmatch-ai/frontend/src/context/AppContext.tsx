@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
-import { Candidate, MatchReport, PageId } from '../types';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import type { ReactNode } from 'react';
+import type { Candidate, MatchReport, PageId } from '../types';
 import { api } from '../services/api';
 
 export interface ToastMessage {

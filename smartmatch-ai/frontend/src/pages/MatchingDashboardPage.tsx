@@ -21,11 +21,11 @@ import {
 } from 'recharts';
 import { useApp } from '../context/AppContext';
 import { api } from '../services/api';
-import { Job, MatchReport } from '../types';
+import type { Job, MatchReport } from '../types';
 import { ScoreGauge } from '../components/ScoreGauge';
 import { MatchStatusBadge } from '../components/SkillStatusBadge';
 import { ExplainabilityBanner } from '../components/ExplainabilityBanner';
-import { CardSkeleton, GaugeSkeleton, TableSkeleton } from '../components/LoadingSkeleton';
+import { CardSkeleton, GaugeSkeleton } from '../components/LoadingSkeleton';
 
 export const MatchingDashboardPage: React.FC = () => {
   const {

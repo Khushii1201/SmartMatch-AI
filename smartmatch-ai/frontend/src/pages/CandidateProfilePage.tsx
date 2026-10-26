@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { api } from '../services/api';
-import { CandidateSkill, ExtractedSkillItem } from '../types';
+import type { CandidateSkill, ExtractedSkillItem } from '../types';
 import { SourceBadge } from '../components/SkillStatusBadge';
 import { TableSkeleton } from '../components/LoadingSkeleton';
 

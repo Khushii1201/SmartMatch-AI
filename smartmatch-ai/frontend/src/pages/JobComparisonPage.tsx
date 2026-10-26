@@ -3,7 +3,6 @@ import {
   GitCompare,
   Play,
   Briefcase,
-  AlertCircle,
   TrendingUp,
   ChevronDown,
   ChevronUp,
@@ -20,7 +19,7 @@ import {
 } from 'recharts';
 import { useApp } from '../context/AppContext';
 import { api } from '../services/api';
-import { Job, JobComparisonReport } from '../types';
+import type { Job, JobComparisonReport } from '../types';
 import { MatchStatusBadge } from '../components/SkillStatusBadge';
 import { ExplainabilityBanner } from '../components/ExplainabilityBanner';
 import { CardSkeleton, TableSkeleton } from '../components/LoadingSkeleton';

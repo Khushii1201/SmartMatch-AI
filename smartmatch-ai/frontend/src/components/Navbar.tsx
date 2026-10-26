@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { User, Sparkles } from 'lucide-react';
-import { PageId } from '../types';
+import type { PageId } from '../types';
 
 const PAGE_TITLES: Record<PageId, string> = {
   home: 'Home Overview',

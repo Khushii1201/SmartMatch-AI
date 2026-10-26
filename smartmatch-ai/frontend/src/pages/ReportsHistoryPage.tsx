@@ -4,7 +4,6 @@ import {
   Download,
   Calendar,
   Briefcase,
-  ChevronRight,
   TrendingUp,
 } from 'lucide-react';
 import {
@@ -18,7 +17,7 @@ import {
 } from 'recharts';
 import { useApp } from '../context/AppContext';
 import { api } from '../services/api';
-import { SessionSummary, SessionDetail } from '../types';
+import type { SessionSummary, SessionDetail } from '../types';
 import { MatchStatusBadge } from '../components/SkillStatusBadge';
 import { TableSkeleton } from '../components/LoadingSkeleton';
 

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { api } from '../services/api';
-import { GapAnalysisReport } from '../types';
+import type { GapAnalysisReport } from '../types';
 import { MatchStatusBadge } from '../components/SkillStatusBadge';
 import { CardSkeleton } from '../components/LoadingSkeleton';
 

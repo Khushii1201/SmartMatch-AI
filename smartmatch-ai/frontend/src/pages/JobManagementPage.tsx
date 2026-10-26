@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { api } from '../services/api';
-import { Job, SampleJob, JobRequirement } from '../types';
+import type { Job, SampleJob, JobRequirement } from '../types';
 import { TableSkeleton } from '../components/LoadingSkeleton';
 
 export const JobManagementPage: React.FC = () => {
