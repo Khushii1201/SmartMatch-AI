@@ -41,6 +41,18 @@ export const MatchingDashboardPage: React.FC = () => {
   const [isRunningMatch, setIsRunningMatch] = useState(false);
   const [isLoadingJobs, setIsLoadingJobs] = useState(false);
   const [isExportingCsv, setIsExportingCsv] = useState(false);
+  const [candidateSkillsCount, setCandidateSkillsCount] = useState<number | null>(null);
+
+  // Load active candidate skills count
+  useEffect(() => {
+    if (!activeCandidate) {
+      setCandidateSkillsCount(null);
+      return;
+    }
+    api.getCandidateSkills(activeCandidate.id)
+      .then((skills) => setCandidateSkillsCount(skills.length))
+      .catch(() => setCandidateSkillsCount(null));
+  }, [activeCandidate]);
 
   // Load jobs list
   useEffect(() => {
@@ -67,6 +79,7 @@ export const MatchingDashboardPage: React.FC = () => {
     if (lastMatchReport.candidate_id !== activeCandidate.id) return null;
     return lastMatchReport;
   }, [lastMatchReport, activeCandidate]);
+
 
   // Run AI Fuzzy Match
   const handleRunMatch = async () => {
@@ -160,8 +173,12 @@ export const MatchingDashboardPage: React.FC = () => {
             </label>
             {activeCandidate ? (
               <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-700/80 text-xs font-bold text-white flex items-center justify-between">
-                <span>{activeCandidate.name}</span>
-                <span className="text-[11px] text-indigo-400 font-mono">ID #{activeCandidate.id}</span>
+                <span className="truncate mr-2">{activeCandidate.name}</span>
+                <span className="text-[11px] text-indigo-400 font-mono shrink-0">
+                  {candidateSkillsCount !== null
+                    ? `${candidateSkillsCount} skills`
+                    : `ID #${activeCandidate.id}`}
+                </span>
               </div>
             ) : (
               <button
@@ -213,6 +230,21 @@ export const MatchingDashboardPage: React.FC = () => {
           </div>
         </div>
 
+        {activeCandidate && candidateSkillsCount === 0 && (
+          <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0 text-amber-400" />
+              <span>This candidate currently has 0 skills saved. All requirements will be evaluated as missing.</span>
+            </div>
+            <button
+              onClick={() => setCurrentPage('profile')}
+              className="font-bold underline hover:text-white shrink-0"
+            >
+              Add Skills
+            </button>
+          </div>
+        )}
+
         {jobs.length === 0 && (
           <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs flex items-center gap-2">
             <AlertCircle className="w-4 h-4 shrink-0" />
@@ -229,6 +261,7 @@ export const MatchingDashboardPage: React.FC = () => {
           </div>
         )}
       </div>
+
 
       {/* Loading Skeletons */}
       {isRunningMatch && (

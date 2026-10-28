@@ -37,7 +37,7 @@ from utils.report_exporter import export_match_report_csv, match_report_to_dataf
 # App setup
 # ---------------------------------------------------------------------
 
-st.set_page_config(page_title="SmartMatch AI", layout="wide", page_icon="🎯")
+st.set_page_config(page_title="SmartMatch AI", layout="wide")
 init_db()
 
 if "candidate_id" not in st.session_state:
@@ -98,7 +98,7 @@ if existing_candidates:
 # ---------------------------------------------------------------------
 
 if page == "Home":
-    st.title("🎯 SmartMatch AI")
+    st.title("SmartMatch AI")
     st.subheader("Intelligent Job–Skill Matching and Career Gap Analysis")
 
     st.markdown(
@@ -442,7 +442,7 @@ elif page == "AI Matching Dashboard":
 
         st.markdown("### Skill-by-Skill Breakdown")
         df = match_report_to_dataframe(report)
-        status_color = {"matched": "🟢", "weak": "🟡", "missing": "🔴"}
+        status_color = {"matched": "[Matched]", "weak": "[Weak]", "missing": "[Missing]"}
         df_display = df.copy()
         df_display["Status"] = df_display["Status"].map(lambda s: f"{status_color.get(s,'')} {s}")
         st.dataframe(df_display, use_container_width=True, hide_index=True)
@@ -485,7 +485,7 @@ elif page == "Skill-Gap Analysis":
 
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown(f"### ✅ Strong matches ({len(matched)})")
+        st.markdown(f"### Strong matches ({len(matched)})")
         if matched:
             for m in matched:
                 st.write(f"**{m.skill_name}** — suitability {m.suitability_score:.0f}/100 "
@@ -494,10 +494,10 @@ elif page == "Skill-Gap Analysis":
             st.caption("No strong matches yet.")
 
     with col2:
-        st.markdown(f"### ⚠️ Gaps to address ({len(gaps)})")
+        st.markdown(f"### Gaps to address ({len(gaps)})")
         if gaps:
             for g in gaps:
-                badge = "🔴 Missing" if g.status == "missing" else "🟡 Weak"
+                badge = "[Missing]" if g.status == "missing" else "[Weak]"
                 mand = "Mandatory" if g.mandatory else "Preferred"
                 st.write(
                     f"{badge} — **{g.skill_name}** ({mand}) — priority score {g.priority_score:.0f} "
@@ -507,7 +507,8 @@ elif page == "Skill-Gap Analysis":
             st.success("No skill gaps detected for this job!")
 
     if gaps:
-        st.markdown("### 📚 Recommended learning priorities")
+        st.markdown("### Recommended learning priorities")
+
         recs = build_recommendations(gaps)
         for rec in recs:
             with st.expander(f"{rec['skill_name']} (priority {rec['priority_score']:.0f})"):

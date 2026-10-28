@@ -50,12 +50,6 @@ def run_match(payload: MatchRequest):
     cand, candidate_skills = _load_candidate_and_skills(payload.candidate_id)
     job, job_requirements = _load_job_and_requirements(payload.job_id)
 
-    if not candidate_skills:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Candidate '{cand['name']}' has no saved skills. Please add skills first.",
-        )
-
     if not job_requirements:
         raise HTTPException(
             status_code=400,
@@ -63,6 +57,7 @@ def run_match(payload: MatchRequest):
         )
 
     report = compute_match(candidate_skills, job_requirements)
+
 
     # Persist session and results
     session_id = repo.save_match_session(cand["id"], job["id"], report.overall_score)
